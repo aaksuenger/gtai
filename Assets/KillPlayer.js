@@ -1,15 +1,9 @@
 ﻿#pragma strict
-public var gameOverLevelName : String = "gameover";
 
-function Start () {
+class KillPlayer extends MonoBehaviour implements IKillable {
+	public var gameOverLevelName : String = "GameOver";
 
-}
-
-function Update () {
-
-}
-
-function OnTriggerEnter (other : Collider) {
-	if(other.tag == "Player")
+	function Kill() {
 		Application.LoadLevel(gameOverLevelName);
+	}
 }
